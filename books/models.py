@@ -15,7 +15,7 @@ class Books(models.Model):  # 책 이름(title)을 정하고, 주제나 간단�
     updated_at = models.DateTimeField(auto_now=True)  # 해당 레코드 갱신 시 현재 시간 자동저장
 
     def __str__(self):
-        return str(self.id)
+        return self.title
 
 
 class Pages(models.Model):
@@ -25,6 +25,6 @@ class Pages(models.Model):
     save_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.books_id)
+        return '{} - {}page'.format(self.books_id.title, self.read_page)
 
 

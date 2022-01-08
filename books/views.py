@@ -5,5 +5,10 @@ from .models import Books
 
 
 def index(request):
-    Books.objects.create(title="test")
-    return HttpResponse("Hello, I am human")
+    target = Books.objects.all()
+
+    context = {
+        'keys': target
+    }
+
+    return render(request, 'books/index.html', context)

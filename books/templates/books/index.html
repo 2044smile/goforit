@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,5 +9,8 @@
 </head>
 <body>
     Hi Everyone
+    {% for c in context %}
+        {{ c.title }}
+    {% endfor %}
 </body>
 </html>
